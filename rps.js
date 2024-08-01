@@ -30,8 +30,9 @@ function playGame() {
     for (let i=0; i<5; i++) {
         playRound(getHumanChoice(),getComputerChoice());
     }
-    humanScore > computerScore ? console.log(`You beat the computer ${humanScore} - ${computerScore}`) :
-    console.log(`The computer beat you ${computerScore} - ${humanScore}`)
+    
+    announceWinner(humanScore, computerScore)
+
     function playRound(humanChoice, computerChoice) {
         if (humanChoice == "rock") {
             switch (computerChoice) {
@@ -82,5 +83,10 @@ function playGame() {
         
     }
 
+}
+
+function announceWinner(humanScore, computerScore) {
+    humanScore > computerScore ? console.log(`You beat the computer ${humanScore} - ${computerScore}`) :
+    console.log(`The computer beat you ${computerScore} - ${humanScore}`)
 }
 playGame();
