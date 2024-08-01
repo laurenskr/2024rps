@@ -15,7 +15,16 @@ function getComputerChoice() {
             break 
     }
     return strChoice
-
 }
-console.log(getComputerChoice())
 
+function getHumanChoice() {
+    let input = prompt("Rock, paper or scissors?").toLowerCase();
+    if (input != "rock" && input != "paper" && input != "scissors") {
+        alert("Try again!");
+        getHumanChoice();
+    } 
+    
+    }
+
+console.log(getComputerChoice())
+getHumanChoice()
