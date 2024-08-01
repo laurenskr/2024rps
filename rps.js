@@ -1,16 +1,12 @@
 function getComputerChoice() {
-    let strChoice ="";
     let intChoice = Math.floor(Math.random()*3);
     switch (intChoice) {
         case 0:
-            strChoice = "rock";
-            break;
+            return "rock"
         case 1:
-            strChoice = "paper";
-            break;
+            return "paper"
         case 2:
-            strChoice = "scissors"
-            break;
+            return "scissors"
     }
     return strChoice
 }
