@@ -43,55 +43,64 @@ function getComputerChoice() {
     
 //     announceWinner(humanScore, computerScore)
 
-    function playRound(humanChoice, computerChoice) {
-        if (humanChoice == "rock") {
-            switch (computerChoice) {
-                case "rock":
-                    results.innerText = "Tie!"
-                    break;
-                case "paper":
-                    results.innerText = "You lose! Paper beats rock!";
-                    computerScore++;
-                    break;
-                case "scissors":
-                    results.innerText = "You win! Rock beats scissors!";
-                    humanScore++;
-                    break;
-            }
-            
-        } else if (humanChoice == "paper") {
-            switch (computerChoice) {
-                case "rock":
-                    results.innerText = "You win! Paper beats rock!";
-                    humanScore++;
-                    break;
-                case "paper":
-                    results.innerText = "Tie!";
-                    break;
-                case "scissors":
-                    results.innerText = "You lose! Scissors beats paper!";
-                    computerScore++;
-                    break;
-            }
-            
-        } else if (humanChoice== "scissors") {
-                switch (computerChoice) {
-                    case "rock":
-                        results.innerText = "You lose! Rock beats scissors!";
-                        computerScore++;
-                        break;
-                    case "paper":
-                        results.innerText = "You win! Scissors beats paper!";
-                        humanScore++;
-                        break;
-                    case "scissors":
-                        results.innerText = "Tie!";
-                        break;
-                }
-                
+function playRound(humanChoice, computerChoice) {
+    const humanScoreField = document.querySelector("#humanScore");
+    const computerScoreField = document.querySelector("#computerScore");
+    if (humanChoice == "rock") {
+        switch (computerChoice) {
+            case "rock":
+                results.innerText = "Tie!"
+                break;
+            case "paper":
+                results.innerText = "You lose! Paper beats rock!";
+                computerScore++;
+                computerScoreField.innerText = computerScore;
+                break;
+            case "scissors":
+                results.innerText = "You win! Rock beats scissors!";
+                humanScoreField.innerText = ++humanScore;
+                break;
         }
         
+    } else if (humanChoice == "paper") {
+        switch (computerChoice) {
+            case "rock":
+                results.innerText = "You win! Paper beats rock!";
+                humanScoreField.innerText = ++humanScore;
+                break;
+            case "paper":
+                results.innerText = "Tie!";
+                break;
+            case "scissors":
+                results.innerText = "You lose! Scissors beats paper!";
+                computerScore++;
+                computerScoreField.innerText = computerScore;
+                break;
+        }
+        
+    } else if (humanChoice== "scissors") {
+            switch (computerChoice) {
+                case "rock":
+                    results.innerText = "You lose! Rock beats scissors!";
+                    computerScore++;
+                    computerScoreField.innerText = computerScore;
+                    break;
+                case "paper":
+                    results.innerText = "You win! Scissors beats paper!";
+                    humanScoreField.innerText = ++humanScore;
+                    break;
+                case "scissors":
+                    results.innerText = "Tie!";
+                    break;
+            }
+            
     }
+    if (humanScore == 5) {
+        alert("You Won The Match!")
+    } else if (computerScore == 5) {
+        alert("You Lost The Match!")
+    }
+}
 
 // }
 
