@@ -96,9 +96,13 @@ function playRound(humanChoice, computerChoice) {
             
     }
     if (humanScore == 5) {
-        alert("You Won The Match!")
+        humanScoreField.innerText = "WINNERWINNERWINNERWINNER";
+        computerScoreField.innerText = "LOSERLOSERLOSERLOSERLOSER";
+        alert("You Won The Match!");
     } else if (computerScore == 5) {
-        alert("You Lost The Match!")
+        humanScoreField.innerText = "LOSERLOSERLOSERLOSERLOSER";
+        computerScoreField.innerText = "WINNERWINNERWINNERWINNER";
+        alert("You Lost The Match!");
     }
 }
 
