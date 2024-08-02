@@ -98,10 +98,16 @@ function playRound(humanChoice, computerChoice) {
     if (humanScore == 5) {
         humanScoreField.innerText = "WINNERWINNERWINNERWINNER";
         computerScoreField.innerText = "LOSERLOSERLOSERLOSERLOSER";
+        humanScore = 0;
+        computerScore = 0;
+        results.innerText = "Pick one to start a new match"
         alert("You Won The Match!");
     } else if (computerScore == 5) {
         humanScoreField.innerText = "LOSERLOSERLOSERLOSERLOSER";
         computerScoreField.innerText = "WINNERWINNERWINNERWINNER";
+        humanScore = 0;
+        computerScore = 0;
+        results.innerText = "Pick one to start a new match"
         alert("You Lost The Match!");
     }
 }
