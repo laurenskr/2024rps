@@ -1,6 +1,8 @@
 let humanScore = 0;
 let computerScore = 0;
 
+const results = document.querySelector("#results");
+
 const rockbtnbtn = document.querySelector("#rockbtn");
 rockbtn.addEventListener("click", function() { playRound("rock", getComputerChoice())});
 
@@ -45,14 +47,14 @@ function getComputerChoice() {
         if (humanChoice == "rock") {
             switch (computerChoice) {
                 case "rock":
-                    console.log("Tie!");
+                    results.innerText = "Tie!"
                     break;
                 case "paper":
-                    console.log("You lose! Paper beats rock!");
+                    results.innerText = "You lose! Paper beats rock!";
                     computerScore++;
                     break;
                 case "scissors":
-                    console.log("You win! Rock beats scissors!");
+                    results.innerText = "You win! Rock beats scissors!";
                     humanScore++;
                     break;
             }
@@ -60,14 +62,14 @@ function getComputerChoice() {
         } else if (humanChoice == "paper") {
             switch (computerChoice) {
                 case "rock":
-                    console.log("You win! Paper beats rock!");
+                    results.innerText = "You win! Paper beats rock!";
                     humanScore++;
                     break;
                 case "paper":
-                    console.log("Tie!")
+                    results.innerText = "Tie!";
                     break;
                 case "scissors":
-                    console.log("You lose! Scissors beats paper!");
+                    results.innerText = "You lose! Scissors beats paper!";
                     computerScore++;
                     break;
             }
@@ -75,15 +77,15 @@ function getComputerChoice() {
         } else if (humanChoice== "scissors") {
                 switch (computerChoice) {
                     case "rock":
-                        console.log("You lose! Rock beats scissors!");
+                        results.innerText = "You lose! Rock beats scissors!";
                         computerScore++;
                         break;
                     case "paper":
-                        console.log("You win! Scissors beats paper!");
+                        results.innerText = "You win! Scissors beats paper!";
                         humanScore++;
                         break;
                     case "scissors":
-                        console.log("Tie!");
+                        results.innerText = "Tie!";
                         break;
                 }
                 
