@@ -1,3 +1,15 @@
+let humanScore = 0;
+let computerScore = 0;
+
+const rockbtnbtn = document.querySelector("#rockbtn");
+rockbtn.addEventListener("click", function() { playRound("rock", getComputerChoice())});
+
+const paperbtn = document.querySelector("#paperbtn");
+paperbtn.addEventListener("click", function() { playRound("paper", getComputerChoice())});
+
+const scissorsbtnbtn = document.querySelector("#scissorsbtn");
+scissorsbtn.addEventListener("click", function() { playRound("scissors", getComputerChoice())});
+
 function getComputerChoice() {
     let intChoice = Math.floor(Math.random()*3);
     switch (intChoice) {
@@ -11,23 +23,23 @@ function getComputerChoice() {
     return strChoice
 }
 
-function getHumanChoice() {
-    let input = prompt("Rock, paper or scissors?").toLowerCase();
-    if (input != "rock" && input != "paper" && input != "scissors") {
-        alert("Try again!");
-        getHumanChoice();
-    } 
-    return input
-    }
+// function getHumanChoice() {
+//     let input = prompt("Rock, paper or scissors?").toLowerCase();
+//     if (input != "rock" && input != "paper" && input != "scissors") {
+//         alert("Try again!");
+//         getHumanChoice();
+//     } 
+//     return input
+//     }
 
-function playGame() {
-    let humanScore = 0;
-    let computerScore = 0;
-    for (let i=0; i<5; i++) {
-        playRound(getHumanChoice(),getComputerChoice());
-    }
+// function playGame() {
+//     let humanScore = 0;
+//     let computerScore = 0;
+//     for (let i=0; i<5; i++) {
+//         playRound(getHumanChoice(),getComputerChoice());
+//     }
     
-    announceWinner(humanScore, computerScore)
+//     announceWinner(humanScore, computerScore)
 
     function playRound(humanChoice, computerChoice) {
         if (humanChoice == "rock") {
@@ -79,10 +91,10 @@ function playGame() {
         
     }
 
-}
+// }
 
-function announceWinner(humanScore, computerScore) {
-    humanScore > computerScore ? console.log(`You beat the computer ${humanScore} - ${computerScore}`) :
-    console.log(`The computer beat you ${computerScore} - ${humanScore}`)
-}
-playGame();
+// function announceWinner(humanScore, computerScore) {
+//     humanScore > computerScore ? console.log(`You beat the computer ${humanScore} - ${computerScore}`) :
+//     console.log(`The computer beat you ${computerScore} - ${humanScore}`)
+// }
+// playGame();
