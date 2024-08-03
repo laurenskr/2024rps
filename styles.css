@@ -1,0 +1,14 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button {
+    font-size: 48px;
+    padding: 40px;
+}
+
+#results {
+    font-size: 48px;
+}
